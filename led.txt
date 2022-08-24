@@ -4,7 +4,7 @@ void setup()
   Serial.begin(9600);
   pinMode(A0,INPUT);
   pinMode(10, OUTPUT);
-  pinMode(9,OUTPUT);
+  pinMode(8,OUTPUT);
 }
 
 void loop()
@@ -14,11 +14,12 @@ ldr=analogRead(A0);
   Serial.println(ldr);
 
   if(ldr<=19){
-    digitalWrite(9,0);
     digitalWrite(10, 1);
+    digitalWrite(8,1);
+    delay(100);
+    digitalWrite(8,0);
   }
   else{
     digitalWrite(10,0);
-    digitalWrite(9,1);
   }
 }
